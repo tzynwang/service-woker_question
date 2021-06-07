@@ -1,4 +1,4 @@
-const cacheName = 'hako cache'
+const cacheName = 'question test-cache'
 
 self.addEventListener('install', () => {
   self.skipWaiting()
