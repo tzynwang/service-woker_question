@@ -55,7 +55,7 @@ export const establish = {
   },
   async registerSW () {
     if ('serviceWorker' in navigator) {
-      await navigator.serviceWorker.register('/service-worker_question//sw.js', { scope: '/service-worker_question/' })
+      await navigator.serviceWorker.register('/service-worker_question/sw.js', { scope: '/service-worker_question/' })
     }
   }
 }
