@@ -20,14 +20,14 @@ self.addEventListener('fetch', event => {
       event.request.url.includes('svg')) {
       const fetchResponse = await fetch(event.request.url)
       if (!fetchResponse.ok) throw fetchResponse.statusText
-      cache.put(event.request, fetchResponse.clone())
+      await cache.put(event.request, fetchResponse.clone())
       return fetchResponse
     }
 
     if (event.request.url.includes('randomuser.me/api/portraits')) {
       const fetchResponse = await fetch(event.request.url, { mode: 'no-cors' })
       if (!fetchResponse.ok) throw fetchResponse.statusText
-      cache.put(event.request, fetchResponse.clone())
+      await cache.put(event.request, fetchResponse.clone())
       return fetchResponse
     }
 
