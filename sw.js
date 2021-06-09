@@ -25,10 +25,12 @@ self.addEventListener('fetch', event => {
     }
 
     if (event.request.url.includes('randomuser.me/api/portraits')) {
-      const fetchResponse = await fetch(event.request.url, { mode: 'no-cors' })
-      if (!fetchResponse.ok) throw fetchResponse.statusText
-      await cache.put(event.request, fetchResponse.clone())
-      return fetchResponse
+      // const fetchResponse = await fetch(event.request.url, { mode: 'no-cors' })
+      // if (!fetchResponse.ok) throw fetchResponse.statusText
+      // await cache.put(event.request, fetchResponse.clone())
+      // return fetchResponse
+      console.log(fetch(event.request.url, { mode: 'no-cors' }))
+      return fetch(event.request.url, { mode: 'no-cors' })
     }
 
     return fetch(event.request.url)
